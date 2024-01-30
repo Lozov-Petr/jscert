@@ -374,7 +374,7 @@ def jsRefArgBuilder(filename):
     # In addition, we may want to add some debug flags.
     arglist = [args.interp_path,
                "-jsparser",
-               os.path.join("interp","parser","lib","js_parser.jar")]
+               os.path.join("interp","parser","lib")]
     if args.jsonparser:
         arglist.append("-json")
     if args.debug:
