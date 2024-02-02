@@ -5,6 +5,19 @@
   :CUSTOM_ID: mainbody
   :END:
 
+** Actual installation
+#+begin_src sh
+git clone https://github.com/Lozov-Petr/jscert.git
+cd jscert
+sudo apt-get install openjdk-8-jre
+sudo update-alternatives --config java (choose java-8-openjdk)
+opam switch create 4.02.3
+eval $(opam env --switch=4.02.3)
+make init
+make
+python2 runtests.py `cat ./test_data/interesting_tests.txt`
+#+end_src
+
 ** Installation
 
 *** The easy way
