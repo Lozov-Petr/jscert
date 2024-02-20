@@ -6,13 +6,30 @@
   :END:
 
 ** Actual installation
+*** Preliminaries
+Opam:
+#+begin_src sh
+sudo apt install opam
+opam init
+opam switch create 4.02.3
+eval $(opam env --switch=4.02.3)
+#+end_src
+
+Python:
+#+begin_src sh
+sudo apt install python2
+#+end_src
+
+Java:
+#+begin_src sh
+sudo apt-get install openjdk-8-jre
+sudo update-alternatives --config java (choose java-8-openjdk)
+#+end_src
+
+*** Installation
 #+begin_src sh
 git clone https://github.com/Lozov-Petr/jscert.git
 cd jscert
-sudo apt-get install openjdk-8-jre
-sudo update-alternatives --config java (choose java-8-openjdk)
-opam switch create 4.02.3
-eval $(opam env --switch=4.02.3)
 make init
 make
 python2 runtests.py `cat ./test_data/interesting_tests.txt`
